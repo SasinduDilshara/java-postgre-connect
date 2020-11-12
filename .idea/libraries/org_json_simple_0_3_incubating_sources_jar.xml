@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="org.json.simple-0.3-incubating-sources.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/org.json.simple-0.3-incubating-sources.jar.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
