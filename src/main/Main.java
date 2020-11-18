@@ -1,7 +1,9 @@
 package main;
 
 import org.json.JSONObject;
+import org.postgresql.core.BaseConnection;
 import org.postgresql.geometric.*;
+import org.postgresql.jdbc.PgSQLXML;
 import org.postgresql.util.PGInterval;
 import org.postgresql.util.PGbytea;
 import org.postgresql.util.PGmoney;
@@ -53,48 +55,58 @@ public class Main {
             System.out.println("Connectio got success");
 
 
-            String callableSQL = "call textsearchtest(?,?,?,?)";
+//            String callableSQL = "call complextest(?,?,?,?)";
+            String callableSQL = "call xmltest(?,?)";
+
             CallableStatement callableStatement = null;
 
             try {
                 callableStatement = conn.prepareCall(callableSQL);
 
-//                callableStatement.setString(1, "lowercase to uppercase");
-
-//                PGbytea bytea = new PGbytea();
-                PGobject toInsert1 = new PGobject();
-                toInsert1.setType("tsvector");
-                toInsert1.setValue("a fat cat sat on a mat and ate a fat rat");
-
-                System.out.println("1111111111111111111111111");
-
-                PGobject toInsert2 = new PGobject();
-                toInsert2.setType("tsquery");
-                toInsert2.setValue("fat & rat");
 
 
+//                PGobject toInsertUUID = new PGobject();
+//            toInsertUUID.setType("complex");
+//            toInsertUUID.setValue("(9.91,9.91)");
 
-                callableStatement.setObject(1, toInsert1);
-                callableStatement.registerOutParameter(2, Types.OTHER);
-                callableStatement.setObject(2, toInsert1);
+//            System.out.println("1111111111111111111111111");
+//
+//            PGobject toInsertUUID1 = new PGobject();
+//            toInsertUUID1.setType("posint");
+//            toInsertUUID1.setValue("1");
+                PgSQLXML toInsertUUID1 =  new PgSQLXML((BaseConnection) conn,"<Tag>Value</Tag>");
 
-                callableStatement.setObject(3, toInsert2);
-                callableStatement.registerOutParameter(4, Types.OTHER);
-                callableStatement.setObject(4, toInsert2);
 
+
+
+//                callableStatement.setObject(1, toInsertUUID);
+//                callableStatement.registerOutParameter(2, Types.BIGINT);
+//                callableStatement.setObject(2, toInsertUUID);
+
+//                callableStatement.setObject(3, toInsertUUID1);
+//                callableStatement.registerOutParameter(4, Types.OTHER);
+//                callableStatement.setObject(4, toInsertUUID1);
+
+                callableStatement.setSQLXML(1, toInsertUUID1);
+                callableStatement.registerOutParameter(2, Types.SQLXML);
+                callableStatement.setSQLXML(2, toInsertUUID1);
 
 
 
                 callableStatement.execute();
 
                 //do something with your return values
-                PGobject xyz = (PGobject)callableStatement.getObject(2);
+                SQLXML xyz = (SQLXML)callableStatement.getObject(2);
                 //... for other items you have registered.
-                System.out.println("Get Output as "+xyz.toString());
+                System.out.println("Get Output as "+xyz.getString());
 
-                PGobject xyz1 = (PGobject)callableStatement.getObject(4);
-                //... for other items you have registered.
-                System.out.println("Get Output as "+xyz1.toString());
+//                PGobject xyz1 = (PGobject)callableStatement.getObject(4);
+//                //... for other items you have registered.
+//                System.out.println("Get Output as "+xyz1.toString());
+
+
+
+
 
 
             } catch (SQLException up) {
