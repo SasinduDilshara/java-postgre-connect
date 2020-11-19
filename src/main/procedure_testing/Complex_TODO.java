@@ -1,7 +1,10 @@
 //package main;
 //
 //import org.json.JSONObject;
+//import org.postgresql.core.BaseConnection;
+//import org.postgresql.core.Tuple;
 //import org.postgresql.geometric.*;
+//import org.postgresql.jdbc.PgArray;
 //import org.postgresql.util.PGInterval;
 //import org.postgresql.util.PGbytea;
 //import org.postgresql.util.PGmoney;
@@ -9,6 +12,8 @@
 //
 //import java.math.BigDecimal;
 //import java.sql.*;
+//import java.util.ArrayList;
+//import java.util.Map;
 //import java.util.Properties;
 //import java.util.UUID;
 //
@@ -53,27 +58,49 @@
 //            System.out.println("Connectio got success");
 //
 //
-////            String callableSQL = "call complextest(?,?,?,?)";
-//            String callableSQL = "call complextest(?,?)";
+//            String callableSQL = "call complextest(?,?,?,?)";
+////            String callableSQL = "call complextest(?,?)";
 //
 //            CallableStatement callableStatement = null;
 //
 //            try {
 //                callableStatement = conn.prepareCall(callableSQL);
 //
+////                Struct com =  {
+////                    double a;
+////                    double b;
+////                };
 //
+////                Tuple a = new Tuple(1,{1,2,3});
 //
-////                PGobject toInsertUUID = new PGobject();
-////            toInsertUUID.setType("complex");
-////            toInsertUUID.setValue("(9.91,9.91)");
+//                PgArray toInsertUUID1 = new PgArray((BaseConnection) conn,22222,"{\"string\",3,4.5}");
+//
+////                PGobject toInsertUUID1 = new PGobject();
+////                toInsertUUID1.setType("complex");
+////                toInsertUUID1.setValue(values.toString());
 //
 ////            System.out.println("1111111111111111111111111");
 ////
-//                PGobject toInsertUUID1 = new PGobject();
-//                toInsertUUID1.setType("inventory_item");
-//                toInsertUUID1.setValue("(\"string\",3,4.5)");
+//                PGobject toInsertUUID2 = new PGobject();
+//                toInsertUUID2.setType("inventory_item");
+//                toInsertUUID2.setValue("(\"string\",3,4.5)");
 //
-//
+////                    Struct a = new Struct() {
+////                        @Override
+////                        public String getSQLTypeName() throws SQLException {
+////                            return null;
+////                        }
+////
+////                        @Override
+////                        public Object[] getAttributes() throws SQLException {
+////                            return new Object[0];
+////                        }
+////
+////                        @Override
+////                        public Object[] getAttributes(Map<String, Class<?>> map) throws SQLException {
+////                            return new Object[0];
+////                        }
+////                    };
 //
 //
 //
@@ -81,26 +108,26 @@
 ////                callableStatement.registerOutParameter(2, Types.BIGINT);
 ////                callableStatement.setObject(2, toInsertUUID);
 //
-////                callableStatement.setObject(3, toInsertUUID1);
-////                callableStatement.registerOutParameter(4, Types.OTHER);
-////                callableStatement.setObject(4, toInsertUUID1);
-//
 //                callableStatement.setObject(1, toInsertUUID1);
-//                callableStatement.registerOutParameter(2, Types.OTHER);
+//                callableStatement.registerOutParameter(2, Types.STRUCT);
 //                callableStatement.setObject(2, toInsertUUID1);
+//
+//                callableStatement.setObject(3, toInsertUUID2);
+//                callableStatement.registerOutParameter(4, Types.STRUCT);
+//                callableStatement.setObject(4, toInsertUUID2);
 //
 //
 //
 //                callableStatement.execute();
 //
 //                //do something with your return values
-//                Long xyz = (Long)callableStatement.getObject(2);
+//                PGobject xyz = (PGobject)callableStatement.getObject(2);
 //                //... for other items you have registered.
 //                System.out.println("Get Output as "+xyz.toString());
 //
-////                PGobject xyz1 = (PGobject)callableStatement.getObject(4);
-////                //... for other items you have registered.
-////                System.out.println("Get Output as "+xyz1.toString());
+//                PGobject xyz1 = (PGobject)callableStatement.getObject(4);
+//                //... for other items you have registered.
+//                System.out.println("Get Output as "+xyz1.toString());
 //
 //
 //

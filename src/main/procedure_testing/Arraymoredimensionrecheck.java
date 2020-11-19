@@ -1,8 +1,10 @@
-//
 //package main;
 //
 //import org.json.JSONObject;
+//import org.postgresql.core.BaseConnection;
 //import org.postgresql.geometric.*;
+//import org.postgresql.jdbc.PgArray;
+//import org.postgresql.jdbc.PgSQLXML;
 //import org.postgresql.util.PGInterval;
 //import org.postgresql.util.PGbytea;
 //import org.postgresql.util.PGmoney;
@@ -54,67 +56,61 @@
 //            System.out.println("Connectio got success");
 //
 //
-////            String callableSQL = "call bittest(?,?,?,?,?,?)";
-//            String callableSQL = "call bittest(?,?,?,?)";
-////            String callableSQL = "call bittest(?,?)";
+////            String callableSQL = "call complextest(?,?,?,?)";
+//            String callableSQL = "call arraytest(?,?)";
+//
 //            CallableStatement callableStatement = null;
 //
 //            try {
 //                callableStatement = conn.prepareCall(callableSQL);
 //
-////                callableStatement.setString(1, "lowercase to uppercase");
-//
-//                PGobject toInsert1 = new PGobject();
-//                toInsert1.setValue("1010101011");
-//                toInsert1.setType("bit");
-//
-//                System.out.println("2222222222222222222222222222");
 //
 //
-////                PGobject toInsert1 = new PGobject();
-////                toInsert1.setType("varbit");
-////                toInsert1.setValue("001010");
+////                PGobject toInsertUUID = new PGobject();
+////            toInsertUUID.setType("complex");
+////            toInsertUUID.setValue("(9.91,9.91)");
 //
-//                PGobject toInsert2 = new PGobject();
-//                toInsert2.setType("bit");
-//                toInsert2.setValue("1");
+////            System.out.println("1111111111111111111111111");
+////
+////            PGobject toInsertUUID1 = new PGobject();
+////            toInsertUUID1.setType("posint");
+////            toInsertUUID1.setValue("1");
+////                PgSQLXML toInsertUUID1 =  new PgSQLXML((BaseConnection) conn,"<Tag>Value</Tag>");
 //
+//                PgArray toInsertUUID1 = new PgArray((BaseConnection) conn, 12,"{1, 23, 4, 5}");
 //
-//
-//                callableStatement.setObject(1, toInsert1);
-//                callableStatement.registerOutParameter(2, Types.OTHER);
-//                callableStatement.setObject(2, toInsert1);
-//
-//                callableStatement.setObject(3, toInsert2);
-//                callableStatement.registerOutParameter(4, Types.BIT);
-//                callableStatement.setObject(4, toInsert2);
-//
-////                callableStatement.setObject(5, toInsert3);
-////                callableStatement.registerOutParameter(6, Types.OTHER);
-////                callableStatement.setObject(6, toInsert3);
+//                Connection co = (Connection) conn;
+//                Integer[][] arr = {{1},{1,2}};
 //
 //
+//
+////                callableStatement.setObject(1, toInsertUUID);
+////                callableStatement.registerOutParameter(2, Types.BIGINT);
+////                callableStatement.setObject(2, toInsertUUID);
+//
+////                callableStatement.setObject(3, toInsertUUID1);
+////                callableStatement.registerOutParameter(4, Types.OTHER);
+////                callableStatement.setObject(4, toInsertUUID1);
+//                Array toInsertUUID1 = co.createArrayOf("integer",arr);
+//                callableStatement.setArray(1,toInsertUUID1 );
+//                callableStatement.registerOutParameter(2, Types.ARRAY);
+//                callableStatement.setArray(2, toInsertUUID1);
 //
 //
 //
 //                callableStatement.execute();
 //
 //                //do something with your return values
-//                Boolean xyz = (Boolean)callableStatement.getObject(4);
+//                Array xyz = (Array)callableStatement.getObject(2);
 //                //... for other items you have registered.
-//                System.out.println("Get Output as "+xyz.toString());
+//                System.out.println("Get Output array as "+xyz);
 //
-//                PGobject xyz1 = (PGobject)callableStatement.getObject(2);
-//                //... for other items you have registered.
-//                System.out.println("Get Output as "+xyz1.toString());
+////                PGobject xyz1 = (PGobject)callableStatement.getObject(4);
+////                //... for other items you have registered.
+////                System.out.println("Get Output as "+xyz1.toString());
 //
-////                PGobject xyz2 = (PGobject)callableStatement.getObject(6);
-////                //... for other items you have registered.
-////                System.out.println("Get Output as "+xyz2.toString());
-////
-////                PGobject xyz3 = (PGobject)callableStatement.getObject(8);
-////                //... for other items you have registered.
-////                System.out.println("Get Output as "+xyz3.toString());
+//
+//
 //
 //
 //
