@@ -17,6 +17,7 @@
 //import java.util.Properties;
 //import java.util.UUID;
 //
+//import static java.sql.JDBCType.STRUCT;
 //import static org.postgresql.util.PGbytea.*;
 //
 ///**
@@ -73,13 +74,35 @@
 //
 ////                Tuple a = new Tuple(1,{1,2,3});
 //
-//                PgArray toInsertUUID1 = new PgArray((BaseConnection) conn,22222,"{\"string\",3,4.5}");
+////                PgArray toInsertUUID1 = new PgArray((BaseConnection) conn,22222,"{\"string\",3,4.5}");
 //
 ////                PGobject toInsertUUID1 = new PGobject();
 ////                toInsertUUID1.setType("complex");
 ////                toInsertUUID1.setValue(values.toString());
 //
 ////            System.out.println("1111111111111111111111111");
+//                Struct toInsertUUID1 = new Struct() {
+//                    @Override
+//                    public String getSQLTypeName() throws SQLException {
+//                        return "complex";
+//                    }
+//
+//                    @Override
+//                    public Object[] getAttributes() throws SQLException {
+//                        Object[] s = {999.123,9.91};
+//                        return s;
+//                    }
+//
+//                    @Override
+//                    public Object[] getAttributes(Map<String, Class<?>> map) throws SQLException {
+//                        return new Object[0];
+//                    }
+//                };
+//
+//                Object[] att = {9.91,9999.21};
+////                STRUCT struct = new STRUCT(d,conn,att);
+//
+//
 ////
 //                PGobject toInsertUUID2 = new PGobject();
 //                toInsertUUID2.setType("inventory_item");
@@ -108,7 +131,24 @@
 ////                callableStatement.registerOutParameter(2, Types.BIGINT);
 ////                callableStatement.setObject(2, toInsertUUID);
 //
-//                callableStatement.setObject(1, toInsertUUID1);
+//                SQLType ty = new SQLType() {
+//                    @Override
+//                    public String getName() {
+//                        return "composite";
+//                    }
+//
+//                    @Override
+//                    public String getVendor() {
+//                        return null;
+//                    }
+//
+//                    @Override
+//                    public Integer getVendorTypeNumber() {
+//                        return null;
+//                    }
+//                };
+//
+//                callableStatement.setObject(1, toInsertUUID1,ty);
 //                callableStatement.registerOutParameter(2, Types.STRUCT);
 //                callableStatement.setObject(2, toInsertUUID1);
 //

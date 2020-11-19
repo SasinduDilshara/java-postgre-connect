@@ -3,13 +3,12 @@
 //
 //import org.json.JSONObject;
 //import org.postgresql.geometric.*;
-//import org.postgresql.util.PGInterval;
-//import org.postgresql.util.PGbytea;
-//import org.postgresql.util.PGmoney;
-//import org.postgresql.util.PGobject;
+//import org.postgresql.util.*;
 //
 //import java.math.BigDecimal;
 //import java.sql.*;
+//import java.time.LocalDateTime;
+//import java.util.Calendar;
 //import java.util.Properties;
 //import java.util.UUID;
 //
@@ -55,8 +54,8 @@
 //
 //
 ////            String callableSQL = "call bittest(?,?,?,?,?,?)";
-//            String callableSQL = "call bittest(?,?,?,?)";
-////            String callableSQL = "call bittest(?,?)";
+////            String callableSQL = "call bittest(?,?,?,?)";
+//            String callableSQL = "call tztest(?,?)";
 //            CallableStatement callableStatement = null;
 //
 //            try {
@@ -64,34 +63,27 @@
 //
 ////                callableStatement.setString(1, "lowercase to uppercase");
 //
-////                PGobject toInsert1 = new PGobject();
-////                toInsert1.setValue("1010101011");
-////                toInsert1.setType("bit 10");
+//                PGobject toInsert1 = new PGobject();
+//                toInsert1.setValue("2004-10-19 10:23:54+02");
+//                toInsert1.setType("timestamptz");
 ////
 ////                System.out.println("2222222222222222222222222222");
 //
-//
-//                PGobject toInsert2 = new PGobject();
-//                toInsert2.setType("varbit");
-//                toInsert2.setValue("001010");
-//
-//                PGobject toInsert3 = new PGobject();
-//                toInsert3.setType("bit");
-//                toInsert3.setValue("1");
+//                Timestamp a = new Timestamp(338899L);
+////                Timestamp a = new PGTimestamp();
+////                PGobject toInsert2 = new PGobject();
+////                toInsert2.setType("varbit");
+////                toInsert2.setValue("001010");
+////                java.sql.Timestampc a = new java.sql.T
 //
 //
+//                callableStatement.setTimestamp(1, a, Calendar.getInstance());
+//                callableStatement.registerOutParameter(2, Types.TIMESTAMP_WITH_TIMEZONE);
+//                callableStatement.setTimestamp(2, a, Calendar.getInstance());
 //
-////                callableStatement.setObject(1, toInsert1);
+////                callableStatement.setObject(1, toInsert2);
 ////                callableStatement.registerOutParameter(2, Types.OTHER);
-////                callableStatement.setObject(2, toInsert1);
-//
-//                callableStatement.setObject(1, toInsert2);
-//                callableStatement.registerOutParameter(2, Types.OTHER);
-//                callableStatement.setObject(2, toInsert2);
-//
-//                callableStatement.setObject(3, toInsert3);
-//                callableStatement.registerOutParameter(4, Types.BIT);
-//                callableStatement.setObject(4, toInsert3);
+////                callableStatement.setObject(2, toInsert2);
 //
 //
 //
@@ -100,22 +92,9 @@
 //                callableStatement.execute();
 //
 //                //do something with your return values
-//                Boolean xyz = (Boolean)callableStatement.getObject(4);
+//                Timestamp xyz= (Timestamp)callableStatement.getObject(2);
 //                //... for other items you have registered.
 //                System.out.println("Get Output as "+xyz.toString());
-//
-//                PGobject xyz1 = (PGobject)callableStatement.getObject(2);
-//                //... for other items you have registered.
-//                System.out.println("Get Output as "+xyz1.toString());
-//
-////                PGobject xyz2 = (PGobject)callableStatement.getObject(6);
-////                //... for other items you have registered.
-////                System.out.println("Get Output as "+xyz2.toString());
-////
-////                PGobject xyz3 = (PGobject)callableStatement.getObject(8);
-////                //... for other items you have registered.
-////                System.out.println("Get Output as "+xyz3.toString());
-//
 //
 //
 //            } catch (SQLException up) {
