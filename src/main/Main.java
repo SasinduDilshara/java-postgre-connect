@@ -45,18 +45,32 @@ public class Main {
         System.out.println("Bit type table selection and insertions");
         Bit.insertAndSelect();
         System.out.println("\n");
+
         System.out.println("Bit type table selection and insertions");
         main.Complex.insertAndSelect();
         System.out.println("\n");
+
         System.out.println("JSON type table selection and insertions");
         main.codes.JSON.insertAndSelect();
         System.out.println("\n");
+
         System.out.println("Network type table selection and insertions");
         main.codes.Network.insertAndSelect();
         System.out.println("\n");
+
         System.out.println("Ranges type table selection and insertions");
         main.codes.Range.insertAndSelect();
         System.out.println("\n");
+
+        System.out.println("Textsearch table selection and insertions");
+        main.codes.TS.insertAndSelect();
+        System.out.println("\n");
+
+        System.out.println("UUID table selection and insertions");
+        main.codes.UUID.insertAndSelect();
+        System.out.println("\n");
+
+
 //        Connection conn = null;
 //
 //        try {

@@ -36,71 +36,71 @@ public class Range {
 
 
             String query_value = "Insert into rangetypes(int4rangeType, int8rangeType, numrangeType, tsrangeType, tstzrangeType, daterangeType, floatrangeType) Values (?,?,?,?,?,?,?)";
-            PGobject toInsertUUID = new PGobject();
-            toInsertUUID.setType("int4range");
-            toInsertUUID.setValue("(2,50)");
+            PGobject insertvalue = new PGobject();
+            insertvalue.setType("int4range");
+            insertvalue.setValue("(2,50)");
 
 //            System.out.println("1111111111111111111111111");
 
-            PGobject toInsertUUID1 = new PGobject();
-            toInsertUUID1.setType("int8range");
-            toInsertUUID1.setValue("(10,100)");
+            PGobject insertvalue1 = new PGobject();
+            insertvalue1.setType("int8range");
+            insertvalue1.setValue("(10,100)");
 
 //            System.out.println("2222222222222222222222222222");
 
 
-            PGobject toInsertUUID2 = new PGobject();
-            toInsertUUID2.setType("numrange");
-            toInsertUUID2.setValue("(0,24)");
+            PGobject insertvalue2 = new PGobject();
+            insertvalue2.setType("numrange");
+            insertvalue2.setValue("(0,24)");
 
-            PGobject toInsertUUID3 = new PGobject();
-            toInsertUUID3.setType("tsrange");
-            toInsertUUID3.setValue("(2010-01-01 14:30, 2010-01-01 15:30)");
+            PGobject insertvalue3 = new PGobject();
+            insertvalue3.setType("tsrange");
+            insertvalue3.setValue("(2010-01-01 14:30, 2010-01-01 15:30)");
 
-            PGobject toInsertUUID4 = new PGobject();
-            toInsertUUID4.setType("tstzrange");
-            toInsertUUID4.setValue("(2010-01-01 14:30, 2010-01-01 15:30)");
+            PGobject insertvalue4 = new PGobject();
+            insertvalue4.setType("tstzrange");
+            insertvalue4.setValue("(2010-01-01 14:30, 2010-01-01 15:30)");
 
 //            System.out.println("1111111111111111111111111");
 
-            PGobject toInsertUUID5 = new PGobject();
-            toInsertUUID5.setType("daterange");
-            toInsertUUID5.setValue("(2010-01-01, 2010-01-08)");
+            PGobject insertvalue5 = new PGobject();
+            insertvalue5.setType("daterange");
+            insertvalue5.setValue("(2010-01-01, 2010-01-08)");
 
 //            System.out.println("2222222222222222222222222222");
 
 
-            PGobject toInsertUUID6 = new PGobject();
-            toInsertUUID6.setType("floatrange");
-            toInsertUUID6.setValue("(2.5,5)");
+            PGobject insertvalue6 = new PGobject();
+            insertvalue6.setType("floatrange");
+            insertvalue6.setValue("(2.5,5)");
 
-            System.out.println(toInsertUUID.getType() + toInsertUUID.getValue());
-            System.out.println(toInsertUUID1.getType() + toInsertUUID1.getValue());
-            System.out.println(toInsertUUID2.getType() + toInsertUUID2.getValue());
-            System.out.println(toInsertUUID3.getType() + toInsertUUID2.getValue());
+            System.out.println(insertvalue.getType() + insertvalue.getValue());
+            System.out.println(insertvalue1.getType() + insertvalue1.getValue());
+            System.out.println(insertvalue2.getType() + insertvalue2.getValue());
+            System.out.println(insertvalue3.getType() + insertvalue2.getValue());
 //            System.out.println("33333333333333333333333333");
 
             PreparedStatement stmt = conn.prepareStatement(query_value);
 
-            stmt.setObject(1,toInsertUUID);
+            stmt.setObject(1,insertvalue);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(2,toInsertUUID1);
+            stmt.setObject(2,insertvalue1);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(3,toInsertUUID2);
+            stmt.setObject(3,insertvalue2);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(4,toInsertUUID3);
+            stmt.setObject(4,insertvalue3);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(5,toInsertUUID4);
+            stmt.setObject(5,insertvalue4);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(6,toInsertUUID5);
+            stmt.setObject(6,insertvalue5);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(7,toInsertUUID6);
+            stmt.setObject(7,insertvalue6);
 
             stmt.execute();
 

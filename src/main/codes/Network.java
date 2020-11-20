@@ -36,45 +36,45 @@ public class Network {
 
 
             String query_value = "Insert into networktypes(inetType,cidrtype,macaddrtype,macaddr8type) Values (?,?,?,?)";
-            PGobject toInsertUUID = new PGobject();
-            toInsertUUID.setType("inet");
-            toInsertUUID.setValue("192.168.100.128/25");
+            PGobject insertvalue = new PGobject();
+            insertvalue.setType("inet");
+            insertvalue.setValue("192.168.100.128/25");
 
 //            System.out.println("1111111111111111111111111");
 
-            PGobject toInsertUUID1 = new PGobject();
-            toInsertUUID1.setType("cidr");
-            toInsertUUID1.setValue("192.168.100.128/25");
+            PGobject insertvalue1 = new PGobject();
+            insertvalue1.setType("cidr");
+            insertvalue1.setValue("192.168.100.128/25");
 
 //            System.out.println("2222222222222222222222222222");
 
 
-            PGobject toInsertUUID2 = new PGobject();
-            toInsertUUID2.setType("macaddr");
-            toInsertUUID2.setValue("08:00:2b:01:02:03");
+            PGobject insertvalue2 = new PGobject();
+            insertvalue2.setType("macaddr");
+            insertvalue2.setValue("08:00:2b:01:02:03");
 
-            PGobject toInsertUUID3 = new PGobject();
-            toInsertUUID3.setType("macaddr8");
-            toInsertUUID3.setValue("08:00:2b:01:02:03:04:05");
+            PGobject insertvalue3 = new PGobject();
+            insertvalue3.setType("macaddr8");
+            insertvalue3.setValue("08:00:2b:01:02:03:04:05");
 
-            System.out.println(toInsertUUID.getType() + toInsertUUID.getValue());
-            System.out.println(toInsertUUID1.getType() + toInsertUUID1.getValue());
-            System.out.println(toInsertUUID2.getType() + toInsertUUID2.getValue());
-            System.out.println(toInsertUUID3.getType() + toInsertUUID2.getValue());
+            System.out.println(insertvalue.getType() + insertvalue.getValue());
+            System.out.println(insertvalue1.getType() + insertvalue1.getValue());
+            System.out.println(insertvalue2.getType() + insertvalue2.getValue());
+            System.out.println(insertvalue3.getType() + insertvalue2.getValue());
 //            System.out.println("33333333333333333333333333");
 
             PreparedStatement stmt = conn.prepareStatement(query_value);
 
-            stmt.setObject(1,toInsertUUID);
+            stmt.setObject(1,insertvalue);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(2,toInsertUUID1);
+            stmt.setObject(2,insertvalue1);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(3,toInsertUUID2);
+            stmt.setObject(3,insertvalue2);
 
 //            System.out.println("4444444444444");
-            stmt.setObject(4,toInsertUUID3);
+            stmt.setObject(4,insertvalue3);
 
             stmt.execute();
 

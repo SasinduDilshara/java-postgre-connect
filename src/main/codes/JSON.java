@@ -36,37 +36,37 @@ public class JSON {
 
 
             String query_value = "Insert into jsontypes(jsontype,jsonbtype,jsonpathtype) Values (?,?,?)";
-            PGobject toInsertUUID = new PGobject();
-            toInsertUUID.setType("json");
-            toInsertUUID.setValue(json.toString());
+            PGobject insertvalue = new PGobject();
+            insertvalue.setType("json");
+            insertvalue.setValue(json.toString());
 
             System.out.println("1111111111111111111111111");
 
-            PGobject toInsertUUID1 = new PGobject();
-            toInsertUUID1.setType("jsonb");
-            toInsertUUID1.setValue(json.toString());
+            PGobject insertvalue1 = new PGobject();
+            insertvalue1.setType("jsonb");
+            insertvalue1.setValue(json.toString());
 
             System.out.println("2222222222222222222222222222");
 
 
-            PGobject toInsertUUID2 = new PGobject();
-            toInsertUUID2.setType("jsonpath");
-            toInsertUUID2.setValue(jp.toString());
+            PGobject insertvalue2 = new PGobject();
+            insertvalue2.setType("jsonpath");
+            insertvalue2.setValue(jp.toString());
 
-            System.out.println(toInsertUUID.getType() + toInsertUUID.getValue());
-            System.out.println(toInsertUUID1.getType() + toInsertUUID1.getValue());
-            System.out.println(toInsertUUID2.getType() + toInsertUUID2.getValue());
+            System.out.println(insertvalue.getType() + insertvalue.getValue());
+            System.out.println(insertvalue1.getType() + insertvalue1.getValue());
+            System.out.println(insertvalue2.getType() + insertvalue2.getValue());
             System.out.println("33333333333333333333333333");
 
             PreparedStatement stmt = conn.prepareStatement(query_value);
 
-            stmt.setObject(1,toInsertUUID);
+            stmt.setObject(1,insertvalue);
 
             System.out.println("4444444444444");
-            stmt.setObject(2,toInsertUUID1);
+            stmt.setObject(2,insertvalue1);
 
             System.out.println("4444444444444");
-            stmt.setObject(3,toInsertUUID2);
+            stmt.setObject(3,insertvalue2);
 
             stmt.execute();
 
