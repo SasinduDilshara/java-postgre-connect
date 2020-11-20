@@ -1,6 +1,8 @@
+
 package main.procedure_testing;
 
 import org.json.JSONObject;
+import org.postgresql.geometric.*;
 import org.postgresql.util.PGInterval;
 import org.postgresql.util.PGbytea;
 import org.postgresql.util.PGmoney;
@@ -19,7 +21,8 @@ import static org.postgresql.util.PGbytea.*;
  * @author www.codejava.net
  *
  */
-public class Interval {
+public class Bit {
+
 
 
     public static void procedurecall() {
@@ -42,7 +45,9 @@ public class Interval {
             System.out.println("Connectio got success");
 
 
-            String callableSQL = "call intervaltest(?,?)";
+//            String callableSQL = "call bittest(?,?,?,?,?,?)";
+            String callableSQL = "call bittest(?,?,?,?)";
+//            String callableSQL = "call bittest(?,?)";
             CallableStatement callableStatement = null;
 
             try {
@@ -50,26 +55,59 @@ public class Interval {
 
 //                callableStatement.setString(1, "lowercase to uppercase");
 
-//                PGbytea bytea = new PGbytea();
-                PGInterval inter = new PGInterval(1,1,1,1,1,1);
+//                PGobject toInsert1 = new PGobject();
+//                toInsert1.setValue("1010101011");
+//                toInsert1.setType("bit 10");
+//
+//                System.out.println("2222222222222222222222222222");
+
+
+                PGobject toInsert2 = new PGobject();
+                toInsert2.setType("varbit");
+                toInsert2.setValue("001010");
+
+                PGobject toInsert3 = new PGobject();
+                toInsert3.setType("bit");
+                toInsert3.setValue("1");
 
 
 
-                callableStatement.setObject(1, inter);
+//                callableStatement.setObject(1, toInsert1);
+//                callableStatement.registerOutParameter(2, Types.OTHER);
+//                callableStatement.setObject(2, toInsert1);
+
+                callableStatement.setObject(1, toInsert2);
+                callableStatement.registerOutParameter(2, Types.OTHER);
+                callableStatement.setObject(2, toInsert2);
+
+                callableStatement.setObject(3, toInsert3);
+                callableStatement.registerOutParameter(4, Types.BIT);
+                callableStatement.setObject(4, toInsert3);
 
 
-                //register multiple output parameters to match all return values
 
-                callableStatement.registerOutParameter(2, Types.OTHER);  //any data type here
 
-                callableStatement.setObject(2, inter);
 
                 callableStatement.execute();
 
                 //do something with your return values
-                PGobject xyz = (PGobject)callableStatement.getObject(2);
+                Boolean xyz = (Boolean)callableStatement.getObject(4);
                 //... for other items you have registered.
                 System.out.println("Get Output as "+xyz.toString());
+
+                PGobject xyz1 = (PGobject)callableStatement.getObject(2);
+                //... for other items you have registered.
+                System.out.println("Get Output as "+xyz1.toString());
+
+//                PGobject xyz2 = (PGobject)callableStatement.getObject(6);
+//                //... for other items you have registered.
+//                System.out.println("Get Output as "+xyz2.toString());
+//
+//                PGobject xyz3 = (PGobject)callableStatement.getObject(8);
+//                //... for other items you have registered.
+//                System.out.println("Get Output as "+xyz3.toString());
+
+
 
             } catch (SQLException up) {
                 throw up;  //haha!

@@ -95,6 +95,38 @@ public class Main {
         main.procedure_testing.OID.procedurecall();
         System.out.println("\n");
 
+        System.out.println("Network procedures calls");
+        main.procedure_testing.Network.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("Json procedures calls");
+        main.procedure_testing.Json.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("Interval procedures calls");
+        main.procedure_testing.Interval.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("Geometric procedures calls");
+        main.procedure_testing.Geometric.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("Enum procedures calls");
+        main.procedure_testing.Enum.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("Domain procedures calls");
+        main.procedure_testing.Domain.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("Binary procedures calls");
+        main.procedure_testing.Binary.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("Bit procedures calls");
+        main.procedure_testing.Bit.procedurecall();
+        System.out.println("\n");
+
 
 //        Connection conn = null;
 //
