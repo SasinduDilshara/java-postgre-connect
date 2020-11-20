@@ -87,6 +87,14 @@ public class Main {
         main.procedure_testing.Range.procedurecall();
         System.out.println("\n");
 
+        System.out.println("PGLSN procedures calls");
+        main.procedure_testing.Pglsn.procedurecall();
+        System.out.println("\n");
+
+        System.out.println("OID procedures calls");
+        main.procedure_testing.OID.procedurecall();
+        System.out.println("\n");
+
 
 //        Connection conn = null;
 //
