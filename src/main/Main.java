@@ -1,6 +1,6 @@
 package main;
 
-import main.Bit;
+//import main.Bit;
 import org.json.JSONObject;
 import org.postgresql.core.BaseConnection;
 import org.postgresql.core.Tuple;
@@ -43,11 +43,11 @@ public class Main {
     public static void main(String[] args) {
         // create three connections to three different databases on localhost
         System.out.println("Bit type table selection and insertions");
-        Bit.insertAndSelect();
+        main.codes.Bit.insertAndSelect();
         System.out.println("\n");
 
         System.out.println("Bit type table selection and insertions");
-        main.Complex.insertAndSelect();
+        main.codes.Complex.insertAndSelect();
         System.out.println("\n");
 
         System.out.println("JSON type table selection and insertions");

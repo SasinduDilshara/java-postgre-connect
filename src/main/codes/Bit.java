@@ -1,4 +1,4 @@
-package main;
+package main.codes;
 
 import org.json.JSONObject;
 import org.postgresql.util.PGobject;
