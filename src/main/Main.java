@@ -75,6 +75,10 @@ public class Main {
         main.procedure_testing.XML.procedurecall();
         System.out.println("\n");
 
+        System.out.println("UUID procedures calls");
+        main.procedure_testing.UUID.procedurecall();
+        System.out.println("\n");
+
 
 //        Connection conn = null;
 //
