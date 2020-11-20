@@ -71,6 +71,11 @@ public class Main {
         System.out.println("\n");
 
 
+        System.out.println("Xml procedures calls");
+        main.procedure_testing.XML.procedurecall();
+        System.out.println("\n");
+
+
 //        Connection conn = null;
 //
 //        try {
