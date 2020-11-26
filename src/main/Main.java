@@ -1,25 +1,8 @@
 package main;
 
 //import main.Bit;
-import org.json.JSONObject;
-import org.postgresql.core.BaseConnection;
-import org.postgresql.core.Tuple;
-import org.postgresql.geometric.*;
-import org.postgresql.jdbc.PgArray;
-import org.postgresql.util.PGInterval;
-import org.postgresql.util.PGbytea;
-import org.postgresql.util.PGmoney;
-import org.postgresql.util.PGobject;
-
-import java.math.BigDecimal;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Properties;
-import java.util.UUID;
-
-import static java.sql.JDBCType.STRUCT;
-import static org.postgresql.util.PGbytea.*;
+import main.learnTest.Test_Procedure;
+import main.learnTest.Test_Table;
 
 /**
  * This program demonstrates how to make database connection to PostgreSQL
@@ -70,62 +53,85 @@ public class Main {
         main.codes.UUID.insertAndSelect();
         System.out.println("\n");
 
-
-        System.out.println("Xml procedures calls");
-        main.procedure_testing.XML.procedurecall();
+        System.out.println("xml table selection and insertions");
+        main.codes.XML.insertAndSelect();
         System.out.println("\n");
 
-        System.out.println("UUID procedures calls");
-        main.procedure_testing.UUID.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Textsearch procedures calls");
-        main.procedure_testing.TS.procedurecall();
-        System.out.println("\n");
+//        System.out.println("Xml procedures calls");
+//        main.procedure_testing.XML.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("UUID procedures calls");
+//        main.procedure_testing.UUID.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Textsearch procedures calls");
+//        main.procedure_testing.TS.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Range procedures calls");
+//        main.procedure_testing.Range.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("PGLSN procedures calls");
+//        main.procedure_testing.Pglsn.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("OID procedures calls");
+//        main.procedure_testing.OID.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Network procedures calls");
+//        main.procedure_testing.Network.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Json procedures calls");
+//        main.procedure_testing.Json.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Interval procedures calls");
+//        main.procedure_testing.Interval.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Geometric procedures calls");
+//        main.procedure_testing.Geometric.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Enum procedures calls");
+//        main.procedure_testing.Enum.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Domain procedures calls");
+//        main.procedure_testing.Domain.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Binary procedures calls");
+//        main.procedure_testing.Binary.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Bit procedures calls");
+//        main.procedure_testing.Bit.procedurecall();
+//        System.out.println("\n");
 
-        System.out.println("Range procedures calls");
-        main.procedure_testing.Range.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("PGLSN procedures calls");
-        main.procedure_testing.Pglsn.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("OID procedures calls");
-        main.procedure_testing.OID.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Network procedures calls");
-        main.procedure_testing.Network.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Json procedures calls");
-        main.procedure_testing.Json.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Interval procedures calls");
-        main.procedure_testing.Interval.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Geometric procedures calls");
-        main.procedure_testing.Geometric.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Enum procedures calls");
-        main.procedure_testing.Enum.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Domain procedures calls");
-        main.procedure_testing.Domain.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Binary procedures calls");
-        main.procedure_testing.Binary.procedurecall();
-        System.out.println("\n");
 
-        System.out.println("Bit procedures calls");
-        main.procedure_testing.Bit.procedurecall();
-        System.out.println("\n");
+//        System.out.println("Bit procedures calls");
+//        Test_Procedure.procedurecall();
+//        System.out.println("\n");
+//
+//        System.out.println("Bit procedures calls");
+//        Test_Table.insertAndSelect();
+//        System.out.println("\n");
+
 
     }
 }
