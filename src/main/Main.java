@@ -25,40 +25,48 @@ public class Main {
 
     public static void main(String[] args) {
         // create three connections to three different databases on localhost
-        System.out.println("Bit type table selection and insertions");
-        main.codes.Bit.insertAndSelect();
-        System.out.println("\n");
+//        System.out.println("Bit type table selection and insertions");
+//        main.codes.Bit.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("Bit type table selection and insertions");
+//        main.codes.Complex.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("JSON type table selection and insertions");
+//        main.codes.JSON.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("Network type table selection and insertions");
+//        main.codes.Network.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("Ranges type table selection and insertions");
+//        main.codes.Range.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("Textsearch table selection and insertions");
+//        main.codes.TS.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("UUID table selection and insertions");
+//        main.codes.UUID.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("xml table selection and insertions");
+//        main.codes.XML.insertAndSelect();
+//        System.out.println("\n");
+//
+//        System.out.println("bytea table selection and insertions");
+//        main.codes.Binary.insertAndSelect();
+//        System.out.println("\n");
 
-        System.out.println("Bit type table selection and insertions");
-        main.codes.Complex.insertAndSelect();
-        System.out.println("\n");
+//        System.out.println("enum table selection and insertions");
+//        main.codes.Enum.insertAndSelect();
+//        System.out.println("\n");
 
-        System.out.println("JSON type table selection and insertions");
-        main.codes.JSON.insertAndSelect();
-        System.out.println("\n");
-
-        System.out.println("Network type table selection and insertions");
-        main.codes.Network.insertAndSelect();
-        System.out.println("\n");
-
-        System.out.println("Ranges type table selection and insertions");
-        main.codes.Range.insertAndSelect();
-        System.out.println("\n");
-
-        System.out.println("Textsearch table selection and insertions");
-        main.codes.TS.insertAndSelect();
-        System.out.println("\n");
-
-        System.out.println("UUID table selection and insertions");
-        main.codes.UUID.insertAndSelect();
-        System.out.println("\n");
-
-        System.out.println("xml table selection and insertions");
-        main.codes.XML.insertAndSelect();
-        System.out.println("\n");
-
-        System.out.println("bytea table selection and insertions");
-        main.codes.Binary.insertAndSelect();
+        System.out.println("enum table selection and insertions");
+        main.codes.Geometric.insertAndSelect();
         System.out.println("\n");
 
 
