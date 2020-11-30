@@ -68,8 +68,16 @@ public class Main {
 //        System.out.println("enum table selection and insertions");
 //        main.codes.Geometric.insertAndSelect();
 //        System.out.println("\n");
-        System.out.println("Interval table selection and insertions");
-        main.codes.Interval.insertAndSelect();
+//        System.out.println("Interval table selection and insertions");
+//        main.codes.Interval.insertAndSelect();
+//        System.out.println("\n");
+
+//        System.out.println("OID table selection and insertions");
+//        main.codes.OID.insertAndSelect();
+//        System.out.println("\n");
+
+        System.out.println("OID table selection and insertions");
+        main.codes.OID.insertAndSelect();
         System.out.println("\n");
 
 
