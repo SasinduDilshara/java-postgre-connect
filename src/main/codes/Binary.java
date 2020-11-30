@@ -1,7 +1,5 @@
 package main.codes;
 
-import org.postgresql.core.BaseConnection;
-import org.postgresql.jdbc.PgSQLXML;
 import org.postgresql.util.PGobject;
 
 import java.sql.*;
@@ -14,7 +12,7 @@ import java.util.Properties;
  * @author www.codejava.net
  *
  */
-public class XML {
+public class Binary {
 
     public static void insertAndSelect() {
         // create three connections to three different databases on localhost
@@ -31,20 +29,21 @@ public class XML {
             System.out.println("Connectio got success");
 
 
-            java.util.UUID uuid = java.util.UUID.randomUUID();
+            String query_value = "Insert into binarytypes(byteatype) Values (?)";
 
-            String query_value = "Insert into xmlTypes(xmlType) Values (?)";
-//            PGobject toInsertUUID = new PGobject();
-//            toInsertUUID.setType("xml");
-//            toInsertUUID.setValue(uuid.toString());
-            SQLXML insertValue = new PgSQLXML((BaseConnection) conn,"<tag>Java xml test </tag>");
-
+            byte[] bytea = {1,2};
+//            Byte bytea1 = new Byte("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+//            Byte bytea1 = new Byte("aa");
+            String str = "Example String";
+            byte[] bytea1= str.getBytes();
             PreparedStatement stmt = conn.prepareStatement(query_value);
-            stmt.setSQLXML(1,insertValue);
+//            stmt.setObject(1,bytea);
+            stmt.setBytes(1,bytea1);
             stmt.execute();
 
 
-            String query = "SELECT * FROM uuidTypes";
+
+            String query = "SELECT * FROM binarytypes";
 
             // create the java statement
             Statement st = conn.createStatement();
@@ -56,8 +55,9 @@ public class XML {
             while (rs.next())
             {
                 int id = rs.getInt("id");
-                SQLXML  obj = rs.getSQLXML(1);
-                System.out.println(obj.toString());
+//                byte[]  obj = rs.getBytes("byteatype");
+                byte[]  obj = rs.getBytes("byteatype");
+                System.out.println("Get types:- "+obj);
 
                 // print the results
             }

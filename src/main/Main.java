@@ -57,6 +57,15 @@ public class Main {
         main.codes.XML.insertAndSelect();
         System.out.println("\n");
 
+        System.out.println("bytea table selection and insertions");
+        main.codes.Binary.insertAndSelect();
+        System.out.println("\n");
+
+
+
+
+
+
 
 //        System.out.println("Xml procedures calls");
 //        main.procedure_testing.XML.procedurecall();

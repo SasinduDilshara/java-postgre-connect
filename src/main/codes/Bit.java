@@ -38,7 +38,7 @@ public class Bit {
             String query_value = "Insert into bittypes(bittype,bitvarytype,bitvarytype2,bitonlytype) Values (?,?,?,?)";
             PGobject insertvalue = new PGobject();
             insertvalue.setType("bit");
-            insertvalue.setValue("110");
+            insertvalue.setValue("000");
 
 
             PGobject insertvalue1 = new PGobject();

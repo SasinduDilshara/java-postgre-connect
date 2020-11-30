@@ -47,23 +47,27 @@ public class Binary {
             try {
                 callableStatement = conn.prepareCall(callableSQL);
 
-                byte[] bytea = {1,2};
+//                byte[] bytea = {1,2};
+                Byte bytea1 = new Byte("hello");
 
 
-
-                callableStatement.setBytes(1, bytea);
+//                callableStatement.setBytes(1, bytea);
+                callableStatement.setByte(1, bytea1);
 
 
                 //register multiple output parameters to match all return values
 
                 callableStatement.registerOutParameter(2, Types.BINARY);  //any data type here
 
-                callableStatement.setObject(2, bytea);
+//                callableStatement.setObject(2, bytea);
+
+                callableStatement.setObject(2, bytea1);
 
                 callableStatement.execute();
 
                 //do something with your return values
-                byte[] xyz = callableStatement.getBytes(2);
+//                byte[] xyz = callableStatement.getBytes(2);
+                Byte xyz = callableStatement.getByte(2);
                 //... for other items you have registered.
                 System.out.println("Get Output as "+xyz.toString());
 
