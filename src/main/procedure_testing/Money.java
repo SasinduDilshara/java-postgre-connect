@@ -41,11 +41,19 @@ public class Money {
             CallableStatement callableStatement = null;
 
             try {
+                String query3 = "set lc_monetary to \"en_US.utf8\"";
+
+                // create the java statement
+                Statement st3 = conn.createStatement();
+
+                // execute the query, and get a java resultset
+                st3.execute(query3);
+
                 callableStatement = conn.prepareCall(callableSQL);
 
 //                callableStatement.setString(1, "lowercase to uppercase");
 
-                PGmoney money = new PGmoney("23333");
+                PGmoney money = new PGmoney(123);
 
                 callableStatement.setObject(1, money);
 
@@ -58,9 +66,21 @@ public class Money {
 
                 callableStatement.execute();
 
+                 query3 = "set lc_monetary to \"en_US.utf8\"";
+
+                // create the java statement
+                 st3 = conn.createStatement();
+
+                // execute the query, and get a java resultset
+                st3.execute(query3);
+
                 //do something with your return values
-                BigDecimal xyz = callableStatement.getBigDecimal(1);
+                Object obj = callableStatement.getObject(2);
                 //... for other items you have registered.
+
+                System.out.println(obj);
+                System.out.println(obj.getClass());
+                System.out.println(obj.toString());
 
             } catch (SQLException up) {
                 throw up;  //haha!
