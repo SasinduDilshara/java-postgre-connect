@@ -90,9 +90,13 @@ public class Main {
 //        main.codes.arrayTypes.Bytea.insertAndSelect();
 //        System.out.println("\n");
 
-//        System.out.println("money table selection and insertions");
+//        System.out.println("Array table selection and insertions");
 //        main.codes.arrayTypes.Array.insertAndSelect();
 //        System.out.println("\n");
+
+        System.out.println("Complex table selection and insertions");
+        main.codes.complextypes.Complex.insertAndSelect();
+        System.out.println("\n");
 
 
 
@@ -160,9 +164,13 @@ public class Main {
 //        main.procedure_testing.Money.procedurecall();
 //        System.out.println("\n");
 
-        System.out.println("money table selection and insertions");
-        main.procedure_testing.arrayTypes.Array.procedurecall();
-        System.out.println("\n");
+//        System.out.println("Aray table selection and insertions");
+//        main.procedure_testing.arrayTypes.Array.procedurecall();
+//        System.out.println("\n");
+
+//        System.out.println("Complex table selection and insertions");
+//        main.procedure_testing.complexTypes.Complex.procedurecall();
+//        System.out.println("\n");
 
 
 
