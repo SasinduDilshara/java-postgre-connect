@@ -94,8 +94,12 @@ public class Main {
 //        main.codes.arrayTypes.Array.insertAndSelect();
 //        System.out.println("\n");
 
-        System.out.println("Complex table selection and insertions");
-        main.codes.complextypes.Complex.insertAndSelect();
+//        System.out.println("Complex table selection and insertions");
+//        main.codes.complextypes.Complex.insertAndSelect();
+//        System.out.println("\n");
+
+        System.out.println("multi array table selection and insertions");
+        main.codes.arrayTypes.MultiArray.insertAndSelect();
         System.out.println("\n");
 
 
