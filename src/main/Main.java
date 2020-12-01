@@ -98,9 +98,9 @@ public class Main {
 //        main.codes.complextypes.Complex.insertAndSelect();
 //        System.out.println("\n");
 
-        System.out.println("multi array table selection and insertions");
-        main.codes.arrayTypes.MultiArray.insertAndSelect();
-        System.out.println("\n");
+//        System.out.println("multi array table selection and insertions");
+//        main.codes.arrayTypes.MultiArray.insertAndSelect();
+//        System.out.println("\n");
 
 
 
@@ -175,6 +175,10 @@ public class Main {
 //        System.out.println("Complex table selection and insertions");
 //        main.procedure_testing.complexTypes.Complex.procedurecall();
 //        System.out.println("\n");
+
+        System.out.println("Multi aray table selection and insertions");
+        main.procedure_testing.arrayTypes.MultiArray.procedurecall();
+        System.out.println("\n");
 
 
 
