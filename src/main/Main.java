@@ -78,12 +78,20 @@ public class Main {
 //        main.codes.OID.insertAndSelect();
 //        System.out.println("\n");
 //
-//        System.out.println("OID table selection and insertions");
+//        System.out.println("pglsn table selection and insertions");
 //        main.codes.Pglsn.insertAndSelect();
 //        System.out.println("\n");
 //
-//        System.out.println("OID table selection and insertions");
+//        System.out.println("money table selection and insertions");
 //        main.codes.Money.insertAndSelect();
+//        System.out.println("\n");
+
+//        System.out.println("money table selection and insertions");
+//        main.codes.arrayTypes.Bytea.insertAndSelect();
+//        System.out.println("\n");
+
+//        System.out.println("money table selection and insertions");
+//        main.codes.arrayTypes.Array.insertAndSelect();
 //        System.out.println("\n");
 
 
@@ -148,9 +156,14 @@ public class Main {
 //        main.procedure_testing.Bit.procedurecall();
 //        System.out.println("\n");
 
-        System.out.println("Bit procedures calls");
-        main.procedure_testing.Money.procedurecall();
+//        System.out.println("Money procedures calls");
+//        main.procedure_testing.Money.procedurecall();
+//        System.out.println("\n");
+
+        System.out.println("money table selection and insertions");
+        main.procedure_testing.arrayTypes.Array.procedurecall();
         System.out.println("\n");
+
 
 
 
