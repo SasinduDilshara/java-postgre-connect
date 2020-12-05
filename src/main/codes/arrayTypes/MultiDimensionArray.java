@@ -17,7 +17,7 @@ import java.util.Properties;
  * @author www.codejava.net
  *
  */
-public class MultiArray {
+public class MultiDimensionArray {
 
     public static void insertAndSelect() {
         // create three connections to three different databases on localhost

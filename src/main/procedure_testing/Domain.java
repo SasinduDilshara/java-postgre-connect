@@ -51,10 +51,19 @@ public class Domain {
             try {
                 callableStatement = conn.prepareCall(callableSQL);
 
+                PGobject insertval = new PGobject();
+                insertval.setType("posint");
+                insertval.setValue("1");
 
-                callableStatement.setObject(1, 1);
+//                int insertval = 1222;
+
+//                callableStatement.setObject(1, 1);
+//                callableStatement.registerOutParameter(2, Types.INTEGER);
+//                callableStatement.setObject(2, 111);
+
+                callableStatement.setObject(1, insertval);
                 callableStatement.registerOutParameter(2, Types.INTEGER);
-                callableStatement.setObject(2, 111);
+                callableStatement.setObject(2, insertval);
 
 
 

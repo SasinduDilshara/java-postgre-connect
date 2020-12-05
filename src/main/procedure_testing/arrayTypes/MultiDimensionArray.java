@@ -24,7 +24,7 @@ import static org.postgresql.util.PGbytea.*;
  * @author www.codejava.net
  *
  */
-public class MultiArray {
+public class MultiDimensionArray {
 
 
     public static void procedurecall() {

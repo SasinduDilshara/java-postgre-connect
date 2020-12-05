@@ -152,9 +152,9 @@ public class Main {
 //        main.procedure_testing.Enum.procedurecall();
 //        System.out.println("\n");
 //
-//        System.out.println("Domain procedures calls");
-//        main.procedure_testing.Domain.procedurecall();
-//        System.out.println("\n");
+        System.out.println("Domain procedures calls");
+        main.procedure_testing.Domain.procedurecall();
+        System.out.println("\n");
 //
 //        System.out.println("Binary procedures calls");
 //        main.procedure_testing.Binary.procedurecall();
@@ -176,9 +176,9 @@ public class Main {
 //        main.procedure_testing.complexTypes.Complex.procedurecall();
 //        System.out.println("\n");
 
-        System.out.println("Multi aray table selection and insertions");
-        main.procedure_testing.arrayTypes.MultiArray.procedurecall();
-        System.out.println("\n");
+//        System.out.println("Multi aray table selection and insertions");
+//        main.procedure_testing.arrayTypes.MultiArray.procedurecall();
+//        System.out.println("\n");
 
 
 
